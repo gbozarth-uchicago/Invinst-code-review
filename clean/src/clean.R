@@ -11,13 +11,13 @@ p_load(readxl, readr, dplyr, tidyr, tidyverse, qdap)
 require(here)
 
 files <- list(
-  input = here::here("import/input", "victim_export.xlsx"),
+  input = here::here("import/output", "victim_export.csv"),
   
   output = here::here("clean/output", "victim_export.csv")
 )
 
 read_data <- function(){
-  read_excel(files$input) 
+  read_delim(files$input, delim = "|") 
 }
 
 main <- function(){
